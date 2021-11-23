@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const error = () => {
+const Error = () => {
     return (
         <div className="error">
             <h1>OoOoh 🧐 Cette page <span>n'existe pas</span> ! </h1>
@@ -9,4 +9,4 @@ const error = () => {
     );
 };
 
-export default error;
+export default Error;

@@ -1,0 +1,49 @@
+.userContent {
+  max-width: 1176px;
+  max-height: 779px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2em;
+  h1 {
+    margin-bottom: 0.5em;
+  }
+  span {
+    color: $color-red;
+  }
+}
+
+.nutrition {
+  .calories {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  .proteines {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  .glucides {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  .lipides {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+  }
+  p {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  span {
+    display: block;
+    font-size: 14px;
+    color: $color-darkgrey;
+  }
+
+  img {
+    margin-right: 2em;
+  }
+}
