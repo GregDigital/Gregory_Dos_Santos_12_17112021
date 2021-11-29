@@ -1,38 +1,113 @@
-import {Component} from 'react'
-import Calorie from "../../assets/calories-icon.svg"
-import Protein from "../../assets/protein-icon.svg"
-import Carbs from  "../../assets/carbs-icon.svg"
-import Fat from "../../assets/fat-icon.svg"
+
+import Radar from "../../components/Chart/ChartRadar"
+import Session from "../../components/Chart/Session"
+import Nutrition from "../../components/Chart/Nutrition"
+import { Component } from "react"
+import App from "../../service/Datas"
 
 class User extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            ddata: {"id":12,"userInfos":{"firstName":"Karl","lastName":"Dovineau","age":31},"todayScore":0.12,"keyData":{"calorieCount":1930,"proteinCount":155,"carbohydrateCount":290,"lipidCount":50}},
+         
+
+
+        }
+    }
+ 
+
+ 
+    render() {
+       
+       
+        console.log("render")
+        const {userInfos,id} = this.props.data
+
+         console.log(this.props.data)
+        const firstName = userInfos ? userInfos.firstName:"h"
+        console.log("Name : " + firstName)
+ 
+        return (
+            <div className="userContent">
+                <h1>Bonjour <span>{firstName}</span></h1>
+                <div>{id}</div>
+                <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+                <Nutrition />
+          
+             
+               
+            </div>
+        )
+    }
+}
+
+  
+
+export default User;
+
+/*
+import {Component} from 'react'
+
+import Calorie from "../../assets/calories-icon.svg"
+import Protein from "../../assets/protein-icon.svg"
+import Carbs from  "../../assets/carbs-icon.svg"
+import Fat from "../../assets/fat-icon.svg"
+import Radar from "../../components/Chart/ChartRadar"
+import Session from "../../components/Chart/Session"
+
+class User extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            users: {},
+
+
         }
     }
  
     componentDidMount() {
         const { id } = this.props.match.params
- 
-        fetch(`http://localhost:4000/user/?id=${id}`)
-        .then((response) => response.json())
-        .then((jsonResponse) => {
-            this.setState({ ddata: jsonResponse.data })
-        })
+        const fetchData = async () => {
+            const response = await fetch(`http://localhost:4000/user/${id}`)
+            const jsonResponse = await response.json()
+            if (jsonResponse && jsonResponse.data){
+                console.log(jsonResponse.data)
+             this.setState({ users: jsonResponse?.data })
+        }
     }
+    fetchData()
+}
  
     render() {
-        const { ddata } = this.state
-      
-   const {id, userInfos, todayScore, keyData} = ddata
-        
+        console.log("render")
+        const{ userInfos, keyData,id} = this.state.users
+
+         console.log("state : " + this.state)
+        const firstName = userInfos ? userInfos.firstName:"h"
+        console.log("Name : " + firstName)
  
         return (
             <div className="userContent">
-                <h1>Bonjour <span>{userInfos.firstName}</span></h1>
+               
+                <h1>Bonjour<span>{this.props.firstName}</span></h1>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-                <div className="nutrition">
+          
+               
+                <Radar />
+                <Session />
+            </div>
+        )
+    }
+}
+
+  
+
+export default User;
+*/
+
+
+/*
+   <div className="nutrition">
                     <div className="calories">
                      <img src={Calorie} alt="logo calorie"/>
                      <div className="infosNutri">
@@ -63,12 +138,4 @@ class User extends Component {
 
                     </div>
                 </div>
-            </div>
-        )
-    }
-}
-
-  
-
-export default User;
-
+*/
