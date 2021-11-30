@@ -1,4 +1,4 @@
-import AsideLogo from "../../assets/iconeNav.svg"
+import AsideLogo from "../assets/logo.svg"
 
 const Aside = () => {
     return (

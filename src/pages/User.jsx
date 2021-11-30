@@ -1,9 +1,9 @@
 
-import Radar from "../../components/Chart/ChartRadar"
-import Session from "../../components/Chart/Session"
-import Nutrition from "../../components/Chart/Nutrition"
+import Radar from "../components/Charts"
+import Session from "../components/Session"
+import Nutrition from "../components/Nutrition"
 import { Component } from "react"
-import App from "../../service/Datas"
+
 
 class User extends Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class User extends Component {
                 <h1>Bonjour <span>{firstName}</span></h1>
                 <div>{id}</div>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-                <Nutrition />
+               <Nutrition />
           
              
                

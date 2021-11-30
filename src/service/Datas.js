@@ -1,18 +1,18 @@
 import { Component } from "react";
-import User from "../../pages/User";
+import User from "../pages/User";
+import Nutrition from "../components/Nutrition";
 
 class Datas extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: {
-      },
+      users: {},
       activity: {},
       performance: {},
       session: {},
     };
   }
-  
+
   componentDidMount() {
     const { id } = this.props.match.params;
     const fetchData = async () => {
@@ -28,7 +28,8 @@ class Datas extends Component {
 
   render() {
     console.log(this.state.users);
-    return <User data={this.state.users} />;
+
+    return;
   }
 }
 
