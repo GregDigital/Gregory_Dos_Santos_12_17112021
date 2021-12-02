@@ -1,15 +1,16 @@
 
-import Radar from "../components/Charts"
-import Session from "../components/Session"
+
 import Nutrition from "../components/Nutrition"
 import { Component } from "react"
+import Datas from "../service/Datas";
+import Score from "../components/Score";
+import Activity from "../components/Activity"
 
 
 class User extends Component {
     constructor(props) {
         super(props)
         this.state = {
-         
 
 
         }
@@ -32,10 +33,9 @@ class User extends Component {
                 <h1>Bonjour <span>{firstName}</span></h1>
                 <div>{id}</div>
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-               <Nutrition />
-          
-             
-               
+                <Nutrition data={this.props.data} />
+                <Score data={this.props.data}/>
+                <Activity />
             </div>
         )
     }

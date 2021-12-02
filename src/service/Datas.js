@@ -1,6 +1,7 @@
 import { Component } from "react";
 import User from "../pages/User";
 import Nutrition from "../components/Nutrition";
+import axios from "axios";
 
 class Datas extends Component {
   constructor(props) {
@@ -24,12 +25,26 @@ class Datas extends Component {
       }
     };
     fetchData();
+
+    const fetchActivity = async () => {
+      const res = await fetch(`http://localhost:4000/user/${id}/activity`);
+      const jsonRes = await res.json();
+      if (jsonRes && jsonRes.data) {
+        console.log(jsonRes.data);
+        this.setState({ activity: jsonRes?.data });
+      }
+    };
+    fetchActivity();
   }
 
   render() {
     console.log(this.state.users);
-
-    return;
+    console.log(this.state.activity);
+    return (
+      <>
+        <User data={this.state.users}></User>
+      </>
+    );
   }
 }
 
