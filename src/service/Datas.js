@@ -9,14 +9,14 @@ class Datas extends Component {
     this.state = {
       users: {},
       activity: {},
-      performance: {},
+      perf: {},
       session: {},
     };
   }
 
   componentDidMount() {
     const { id } = this.props.match.params;
-    const fetchData = async () => {
+    const getUser = async () => {
       const response = await fetch(`http://localhost:4000/user/${id}`);
       const jsonResponse = await response.json();
       if (jsonResponse && jsonResponse.data) {
@@ -24,25 +24,56 @@ class Datas extends Component {
         this.setState({ users: jsonResponse?.data });
       }
     };
-    fetchData();
+    getUser();
 
-    const fetchActivity = async () => {
-      const res = await fetch(`http://localhost:4000/user/${id}/activity`);
-      const jsonRes = await res.json();
-      if (jsonRes && jsonRes.data) {
-        console.log(jsonRes.data);
-        this.setState({ activity: jsonRes?.data });
+    const getActivity = async () => {
+      const resAct = await fetch(`http://localhost:4000/user/${id}/activity`);
+      const jsonResAct = await resAct.json();
+      if (jsonResAct && jsonResAct.data) {
+        console.log(jsonResAct.data);
+        this.setState({ activity: jsonResAct?.data });
       }
     };
-    fetchActivity();
+    getActivity();
+
+    const getSession = async () => {
+      const resSession = await fetch(
+        `http://localhost:4000/user/${id}/average-sessions`
+      );
+      const jsonResSession = await resSession.json();
+      if (jsonResSession && jsonResSession.data) {
+        console.log(jsonResSession.data);
+        this.setState({ session: jsonResSession?.data });
+      }
+    };
+    getSession();
+
+    const getPerf = async () => {
+      const resPerf = await fetch(
+        `http://localhost:4000/user/${id}/performance`
+      );
+      const jsonResPerf = await resPerf.json();
+      if (jsonResPerf && jsonResPerf.data) {
+        console.log(jsonResPerf.data);
+        this.setState({ perf: jsonResPerf?.data });
+      }
+    };
+    getPerf();
   }
 
   render() {
     console.log(this.state.users);
     console.log(this.state.activity);
+    console.log(this.state.session);
+    console.log(this.state.perf);
     return (
       <>
-        <User data={this.state.users}></User>
+        <User
+          data={this.state.users}
+          dataActivity={this.state.activity}
+          dataSession={this.state.session}
+          dataPerf={this.state.perf}
+        ></User>
       </>
     );
   }
