@@ -70,8 +70,8 @@ class Datas extends Component {
       <>
         <User
           data={this.state.users}
-          dataActivity={this.state.activity}
-          dataSession={this.state.session}
+          session={this.state.session}
+          activity={this.state.activity}
           dataPerf={this.state.perf}
         ></User>
       </>

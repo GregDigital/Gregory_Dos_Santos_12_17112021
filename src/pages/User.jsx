@@ -4,7 +4,9 @@ import Nutrition from "../components/Nutrition"
 import { Component } from "react"
 import Datas from "../service/Datas";
 import Score from "../components/Score";
+import Radar from "../components/Radar"
 import Activity from "../components/Activity"
+import AverageActivity from "../components/AverageActivity";
 
 
 class User extends Component {
@@ -27,15 +29,19 @@ class User extends Component {
          console.log(this.props.data)
         const firstName = userInfos ? userInfos.firstName:"h"
         console.log("Name : " + firstName)
+
+        console.log(this.props.dataPerf)
  
         return (
             <div className="userContent">
                 <h1>Bonjour <span>{firstName}</span></h1>
-                <div>{id}</div>
+           
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-                <Nutrition data={this.props.data} />
+                
+                <AverageActivity session={this.props.session} />
+                <Radar dataPerf={this.props.dataPerf}/>
                 <Score data={this.props.data}/>
-                <Activity />
+                <Nutrition data={this.props.data} />
             </div>
         )
     }

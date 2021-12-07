@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 
-
 const data = [
   {
     name: 'Page A',
@@ -48,12 +47,13 @@ const data = [
   },
 ];
 
-export default class Example extends Component {
+class Activity extends Component {
 
 
   render() {
     return (
-      <ResponsiveContainer width="835px" height="320px">
+      <div className="activity">
+      <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
           height={300}
@@ -74,6 +74,10 @@ export default class Example extends Component {
           <Bar dataKey="uv" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>
+      </div>
     );
   }
 }
+
+
+export default Activity;

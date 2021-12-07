@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from "prop-types"
+
 import "../styles/components/_score.scss"
 import { PieChart, Pie, Cell } from 'recharts';
 
@@ -57,8 +57,6 @@ import { PieChart, Pie, Cell } from 'recharts';
         )
     }
 }
-Score.propTypes = {
-  todayScore: PropTypes.number.isRequired
-}
+
 
 export default Score
