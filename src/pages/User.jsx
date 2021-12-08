@@ -2,7 +2,7 @@
 
 import Nutrition from "../components/Nutrition"
 import { Component } from "react"
-import Datas from "../service/Datas";
+
 import Score from "../components/Score";
 import Radar from "../components/Radar"
 import Activity from "../components/Activity"
@@ -24,7 +24,7 @@ class User extends Component {
        
        
         console.log("render")
-        const {userInfos,id} = this.props.data
+        const {userInfos} = this.props.data
 
          console.log(this.props.data)
         const firstName = userInfos ? userInfos.firstName:"h"
