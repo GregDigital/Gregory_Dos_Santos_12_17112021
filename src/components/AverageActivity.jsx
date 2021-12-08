@@ -38,9 +38,9 @@ console.log(data)
           <LineChart
             data={data}
             margin={{
-              top: 5,
-              right: 30,
-              left: 20,
+              top: 10,
+              right: 10,
+              left: 10,
               bottom: 5,
             }}
           >
@@ -67,7 +67,7 @@ console.log(data)
               type="monotone" 
               dataKey="sessionLength" 
               stroke="rgba(255, 255, 255, 0.6)"
-              strokeWidth={3}
+              width="500px"
               dot={false}
               activeDot={{ stroke: '#FFFFFF33', strokeWidth: 10, r: 5 }}
               strokeDashArray="4"

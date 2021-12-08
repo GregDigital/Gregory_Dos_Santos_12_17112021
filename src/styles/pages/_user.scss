@@ -13,6 +13,13 @@
 }
 
 .nutrition {
+  width: 258px;
+  .contentNutri {
+    width: 258px;
+    padding: 10%;
+    height: 124px;
+    background: #fbfbfb;
+  }
   .calories {
     display: flex;
     align-items: center;
@@ -46,4 +53,24 @@
   img {
     margin-right: 2em;
   }
+}
+
+.userContent_activity_nutrition {
+  display: grid;
+
+  grid-template-areas:
+    "d d b"
+    "v v b"
+    ". . .";
+  height: 387px;
+}
+
+.userContent_score {
+  display: flex;
+  width: 810px;
+  justify-content: space-between;
+}
+
+.userContentTitle {
+  margin-bottom: 5em;
 }

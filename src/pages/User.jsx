@@ -34,14 +34,20 @@ class User extends Component {
  
         return (
             <div className="userContent">
+                <div className="userContentTitle">
                 <h1>Bonjour <span>{firstName}</span></h1>
-           
                 <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-                
+                </div>
+                <div className="userContent_activity_nutrition">
+                <Activity  activity={this.props.activity} />
+                <Nutrition data={this.props.data} />
+              
+                </div>
+                <div className="userContent_score">
                 <AverageActivity session={this.props.session} />
                 <Radar dataPerf={this.props.dataPerf}/>
                 <Score data={this.props.data}/>
-                <Nutrition data={this.props.data} />
+                </div>
             </div>
         )
     }

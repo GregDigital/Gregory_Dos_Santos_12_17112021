@@ -22,28 +22,28 @@ class Nutrition extends Component {
  
         return (
             <div className="nutrition">
-           <div className="calories">
+           <div className="calories contentNutri">
                      <img src={Calorie} alt="logo calorie"/>
                      <div className="infosNutri">
                       <p>{calorieCount}kCal</p>   
                       <span>Calories</span>
                      </div>
                     </div>
-                    <div className="proteines">
+                    <div className="proteines contentNutri">
                     <img src={Protein} alt="logo proteine"/>
                     <div className="infosNutri">
                     <p>{proteinCount}g</p>
                     <span>Proteine</span>
                     </div>
                     </div>
-                    <div className="glucides">
+                    <div className="glucides contentNutri">
                     <img src={Carbs} alt="logo glucides"/>
                     <div className="infosNutri">
                     <p>{carbohydrateCount}g</p>
                     <span>Glucides</span>
                     </div>
                     </div>
-                    <div className="lipides">
+                    <div className="lipides contentNutri">
                     <img src={Fat} alt="logo lipides"/>
                     <div className="infosNutri">
                     <p>{lipidCount}g</p>

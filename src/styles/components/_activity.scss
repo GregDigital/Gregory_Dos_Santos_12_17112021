@@ -1,5 +1,6 @@
 .activity {
-  background-color: $color-darkgrey;
+  grid-area: 1 / 1 / 2 / 4;
+  background-color: $color-white;
   border-radius: 5px;
 
   font-size: 12px;
@@ -11,4 +12,55 @@
   max-height: 320px;
   height: 19vw;
   border-radius: 10px;
+}
+
+.activityTitleh {
+  color: #20253a;
+  font-size: 15px;
+  margin-right: 15em;
+}
+
+.legend {
+  font-size: 14px;
+  display: flex;
+  font-weight: 400;
+}
+
+#poids {
+  display: flex;
+
+  align-items: baseline;
+  margin-right: 11em;
+  color: #74798c;
+}
+
+#calories {
+  display: flex;
+  color: #74798c;
+}
+
+.header-barChart {
+  display: flex;
+}
+.activity-chart-container {
+  width: 835px;
+  height: 320px;
+  background-color: #fbfbfb;
+}
+
+.point {
+  display: inline-block;
+
+  border-radius: 50px;
+  padding: 7px;
+  height: 1px;
+  margin-right: 10px;
+}
+
+.black {
+  background-color: #282d30;
+}
+
+.red {
+  background-color: #e60000;
 }
