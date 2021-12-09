@@ -6,7 +6,7 @@ User profile page which tracks the number of sessions performed as well as the n
 
 [IMG]
 
-## `Technologies`
+## `Technologies` :
 
 - SCSS
 - React
@@ -14,8 +14,14 @@ User profile page which tracks the number of sessions performed as well as the n
 - Fetch
 - Prop-types
 
-## `Pre required`
+## `Prerequisites` :
 
 - NodeJs
 - VisualStudio Code
 - Docker Desktop
+
+## `Installation` :
+
+- 1 API installation :
+
+Get the clone in this link https://github.com/GregDigital/P9-front-end-dashboard.git
