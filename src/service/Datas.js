@@ -4,6 +4,7 @@ import User from "../pages/User";
 class Datas extends Component {
   constructor(props) {
     super(props);
+    /*recover data*/
     this.state = {
       users: {},
       activity: {},
@@ -11,14 +12,19 @@ class Datas extends Component {
       session: {},
     };
   }
-
+  /**
+* The following variables are used to connect to a database :
+- getUser
+- getActivity
+- getSession
+- getPerf
+*/
   componentDidMount() {
     const { id } = this.props.match.params;
     const getUser = async () => {
       const response = await fetch(`http://localhost:4000/user/${id}`);
       const jsonResponse = await response.json();
       if (jsonResponse && jsonResponse.data) {
-        console.log(jsonResponse.data);
         this.setState({ users: jsonResponse?.data });
       }
     };
@@ -28,7 +34,6 @@ class Datas extends Component {
       const resAct = await fetch(`http://localhost:4000/user/${id}/activity`);
       const jsonResAct = await resAct.json();
       if (jsonResAct && jsonResAct.data) {
-        console.log(jsonResAct.data);
         this.setState({ activity: jsonResAct?.data });
       }
     };
@@ -40,7 +45,6 @@ class Datas extends Component {
       );
       const jsonResSession = await resSession.json();
       if (jsonResSession && jsonResSession.data) {
-        console.log(jsonResSession.data);
         this.setState({ session: jsonResSession?.data });
       }
     };
@@ -52,7 +56,6 @@ class Datas extends Component {
       );
       const jsonResPerf = await resPerf.json();
       if (jsonResPerf && jsonResPerf.data) {
-        console.log(jsonResPerf.data);
         this.setState({ perf: jsonResPerf?.data });
       }
     };

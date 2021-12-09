@@ -23,14 +23,9 @@ class User extends Component {
     render() {
        
        
-        console.log("render")
         const {userInfos} = this.props.data
-
-         console.log(this.props.data)
         const firstName = userInfos ? userInfos.firstName:"h"
-        console.log("Name : " + firstName)
-
-        console.log(this.props.dataPerf)
+  
  
         return (
             <div className="userContent">

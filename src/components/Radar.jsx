@@ -4,17 +4,15 @@ import PropTypes from "prop-types";
 
 class RadarGraph extends Component {
     render () {
-        // get data and kind property from props by using destructuring to avoid to write this.props.performance
+       
 
       const data = this.props.dataPerf.data
       const kind = this.props.dataPerf.kind
-      console.log(this.props.dataPerf)
+    
       let userData = [];
-      /**
-       * This loop allow us to format props data to new format
-       */
+ 
 for (const prop in data){
-  console.log(data[prop])
+ 
   userData.splice(0,0, {
     subject: kind[data[prop].kind],
     A: data[prop].value,
@@ -24,7 +22,7 @@ for (const prop in data){
   
 }
 
-console.log(userData)
+
 
         return (
           <div className="radarGraph">
@@ -56,8 +54,8 @@ console.log(userData)
     }
 }
 
-Performance.propTypes = {
-    data: PropTypes.array,
+RadarGraph.propTypes = {
+    data: PropTypes.number,
     kind: PropTypes.object
 }
 

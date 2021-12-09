@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-
+import PropTypes from "prop-types";
 import "../styles/components/_score.scss"
 import { PieChart, Pie, Cell } from 'recharts';
 
   class Score extends Component {
     render () {
-      // get todayScore property from props by using destructuring
+   
       const {todayScore} = this.props.data
       const pieData = [
         { value:  todayScore},
@@ -58,5 +58,9 @@ import { PieChart, Pie, Cell } from 'recharts';
     }
 }
 
+Score.propTypes = {
+ todayScore: PropTypes.number
+
+}
 
 export default Score

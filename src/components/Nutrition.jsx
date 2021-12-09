@@ -4,7 +4,7 @@ import Calorie from "../assets/calories-icon.svg"
 import Protein from "../assets/protein-icon.svg"
 import Carbs from  "../assets/carbs-icon.svg"
 import Fat from "../assets/fat-icon.svg"
-
+import PropTypes from "prop-types";
 class Nutrition extends Component {
     
  
@@ -56,6 +56,8 @@ class Nutrition extends Component {
     }
 }
 
-  
+Nutrition.propTypes = {
+    keyData: PropTypes.object
+}
 
 export default Nutrition;

@@ -9,23 +9,11 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'rec
 
 
 class AverageActivity extends Component {
-    render () {
-      // get averageSession property from props by using destructuring to avoid to write this.props
-     console.log(this.props.session)
-   
-   
 
+    render () {
+  
 
      const data = this.props.session.sessions
-console.log(data)
-
-
-
-
-     /**
-      * This loop allow us to format props data to new format
-      */
-
 
         return (
           <div className="average">
@@ -80,8 +68,11 @@ console.log(data)
 }
 
 
+AverageActivity.propTypes = {
+data: PropTypes.array.isRequired
+}
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload}) => {
   if (active && payload) {
     return (
       <div className="custom-tooltip">
