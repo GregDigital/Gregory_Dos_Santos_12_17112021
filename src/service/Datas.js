@@ -1,7 +1,5 @@
 import { Component } from "react";
 import User from "../pages/User";
-import Nutrition from "../components/Nutrition";
-import axios from "axios";
 
 class Datas extends Component {
   constructor(props) {
@@ -62,10 +60,6 @@ class Datas extends Component {
   }
 
   render() {
-    console.log(this.state.users);
-    console.log(this.state.activity);
-    console.log(this.state.session);
-    console.log(this.state.perf);
     return (
       <>
         <User
