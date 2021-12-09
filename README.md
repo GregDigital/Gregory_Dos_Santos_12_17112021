@@ -47,6 +47,6 @@ Get the clone in this link https://github.com/GregDigital/P9-front-end-dashboard
 Clone it on your computer.
 
 - 1 Install Yarn packages :
-  [yarn]
+  `yarn`
 - 2 Run the project SportSee :
-  [yarn start]
+  `yarn start`
