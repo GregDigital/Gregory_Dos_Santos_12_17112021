@@ -1,9 +1,7 @@
 .userContent {
-  max-width: 1176px;
-  max-height: 779px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 2em;
+  margin: auto;
+  width: 1150px;
+
   h1 {
     margin-bottom: 0.5em;
   }
@@ -56,21 +54,55 @@
 }
 
 .userContent_activity_nutrition {
-  display: grid;
-
-  grid-template-areas:
-    "d d b"
-    "v v b"
-    ". . .";
-  height: 387px;
+  font-size: 12px;
+  min-width: 600px;
+  max-width: 835px;
+  width: 65vw;
+  min-height: 300px;
+  max-height: 320px;
+  height: 35vw;
+  border-radius: 10px;
 }
 
 .userContent_score {
   display: flex;
-  width: 810px;
-  justify-content: space-between;
+
+  gap: 2rem;
 }
 
 .userContentTitle {
   margin-bottom: 5em;
+}
+
+.userContentInfos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.userContentInfos_activity_nutrition {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+}
+
+@media screen and (max-width: 1024px) {
+  .userContentTitle {
+    margin-bottom: 1em;
+  }
+  .nutrition {
+    width: 258px;
+    .contentNutri {
+      width: 258px;
+      padding: 2%;
+      height: 100px;
+      background: #fbfbfb;
+    }
+  }
+}
+
+@media screen and (max-width: 1370px) {
+  .userContent {
+    margin-left: 8em;
+  }
 }

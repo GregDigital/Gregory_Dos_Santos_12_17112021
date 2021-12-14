@@ -1,9 +1,13 @@
 .divScore {
-  width: 250px;
-  height: 250px;
   position: relative;
   background: #fbfbfb;
-  border-radius: 5px;
+  min-width: 150px;
+  max-width: 260px;
+  width: 19vw;
+  min-height: 150px;
+  max-height: 260px;
+  height: 19vw;
+  border-radius: 10px;
 }
 
 .score {
