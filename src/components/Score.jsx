@@ -21,16 +21,16 @@ class Score extends Component {
             fill="red !important"
             paddingAngle={2}
             dataKey="value"
-            innerRadius={70}
-            outerRadius={80}
+            innerRadius={68}
+            outerRadius={75}
             startAngle={100}
             endAngle={460}
           >
-            <Cell className="cell" fill={"#ff0101"} cornerRadius="90%" />
+            <Cell className="cell" fill={"#ff0101"} cornerRadius="60%" />
             <Cell
               className="cell"
               fill={"transparent"}
-              cornerRadius="90%"
+              cornerRadius="60%"
               margin={{
                 top: 50,
                 bottom: 50,
