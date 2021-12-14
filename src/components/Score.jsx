@@ -1,66 +1,61 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 import PropTypes from "prop-types";
-import "../styles/components/_score.scss"
-import { PieChart, Pie, Cell } from 'recharts';
+import "../styles/components/_score.scss";
+import { PieChart, Pie, Cell } from "recharts";
 
-  class Score extends Component {
-    render () {
-   
-      const {todayScore} = this.props.data
-      const pieData = [
-        { value:  todayScore},
-        { value: 1 - todayScore },
-      ]
-        return (
-          <div className="divScore" position="relative">
-               <h3 id="title_score" position="absolute">Score</h3>
-            <PieChart width={250} height={250} className="pieChart" >
-                
-            <Pie
-              className="pie"
-              data={pieData}
-              cx={"50%"}
-              cy={"60%"}
-              fill="red !important"
-              paddingAngle={5}
-              dataKey="value"
-              innerRadius={70}
-              outerRadius={80}
-              startAngle={90}
-              endAngle={460}
-            >
-              <Cell
-                className="cell"
-                fill={"#ff0101"}
-                cornerRadius="50%"
-              />
-              <Cell
-                className="cell"
-                fill={"transparent"}
-                cornerRadius="50%"
-                margin={{
-                  top: 0
-                }}
-              />
-            </Pie>
+class Score extends Component {
+  render() {
+    const { todayScore } = this.props.data;
+    const pieData = [{ value: todayScore }, { value: 1 - todayScore }];
+    return (
+      <div className="divScore" position="relative">
+        <h3 id="title_score" position="absolute">
+          Score
+        </h3>
+        <PieChart width={240} height={240} className="pieChart">
+          <Pie
+            className="pie"
+            data={pieData}
+            cx={"45%"}
+            cy={"45%"}
+            fill="red !important"
+            paddingAngle={2}
+            dataKey="value"
+            innerRadius={70}
+            outerRadius={80}
+            startAngle={100}
+            endAngle={460}
+          >
+            <Cell className="cell" fill={"#ff0101"} cornerRadius="90%" />
+            <Cell
+              className="cell"
+              fill={"transparent"}
+              cornerRadius="90%"
+              margin={{
+                top: 50,
+                bottom: 50,
+              }}
+            />
+          </Pie>
+        </PieChart>
 
-            </PieChart>
-               
-            <div className="text-PieChart" >
-                <div id="score">
-                <div id="box-content">
-                    <p><span id="percentage">{todayScore*100}%</span><br /> de votre objectif</p>
-                </div>
-                </div>
+        <div className="text-PieChart">
+          <div id="score">
+            <div id="box-content">
+              <p>
+                <span id="percentage">{todayScore * 100}%</span>
+                <br /> de votre objectif
+              </p>
             </div>
           </div>
-        )
-    }
+        </div>
+      </div>
+    );
+  }
 }
 
 Score.propTypes = {
- todayScore: PropTypes.number
+  todayScore: PropTypes.number,
+};
 
-}
-
-export default Score
+export default Score;
