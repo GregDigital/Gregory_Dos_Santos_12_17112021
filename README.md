@@ -1,6 +1,7 @@
 # Projet 12 - SportSee
 
 User profile page which tracks the number of sessions performed as well as the number of calories burned.
+Site [https://sportsee-gregdigital.netlify.app/]
 
 ## `Technologies`
 
