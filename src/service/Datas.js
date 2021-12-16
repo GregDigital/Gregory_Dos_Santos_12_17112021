@@ -6,12 +6,20 @@ class Datas extends Component {
     super(props);
 
     this.state = {
+      source: "mock",
       users: {},
       activity: {},
       perf: {},
       session: {},
     };
   }
+
+  /**
+   *
+   * @param {String} url
+   * @param {String} key
+   * @returns Object
+   */
 
   fetchApi(url, key) {
     const getData = async () => {
@@ -27,13 +35,31 @@ class Datas extends Component {
   componentDidMount() {
     const { id } = this.props.match.params;
 
-    this.fetchApi(`http://localhost:4000/user/${id}`, "users");
-    this.fetchApi(`http://localhost:4000/user/${id}/activity`, "activity");
-    this.fetchApi(`http://localhost:4000/user/${id}/performance`, "perf");
-    this.fetchApi(
-      `http://localhost:4000/user/${id}/average-sessions`,
-      "session"
-    );
+    if (this.state.source === "api") {
+      // requête l'API
+      this.fetchApi(`http://localhost:4000/user/${id}`, "users");
+      this.fetchApi(`http://localhost:4000/user/${id}/activity`, "activity");
+      this.fetchApi(`http://localhost:4000/user/${id}/performance`, "perf");
+      this.fetchApi(
+        `http://localhost:4000/user/${id}/average-sessions`,
+        "session"
+      );
+    } else if (this.state.source === "mock") {
+      // requête le fichier
+      this.fetchApi(`http://localhost:3000/mocked/dataUser.json`, "users");
+      this.fetchApi(
+        `http://localhost:3000/mocked/dataActivity.json`,
+        "activity"
+      );
+      this.fetchApi(
+        `http://localhost:3000/mocked/dataPerformance.json`,
+        "perf"
+      );
+      this.fetchApi(
+        `http://localhost:3000/mocked/dataAverageSession.json`,
+        "session"
+      );
+    }
   }
 
   render() {

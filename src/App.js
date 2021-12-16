@@ -8,6 +8,8 @@ import Datas from "./service/Datas";
 import Home from "./pages/Home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+//Routes of the app.
+
 class App extends React.Component {
   render() {
     return (
