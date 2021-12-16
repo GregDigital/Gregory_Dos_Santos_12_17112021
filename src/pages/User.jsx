@@ -14,7 +14,7 @@ class User extends Component {
 
   render() {
     const { userInfos } = this.props.data;
-    const firstName = userInfos ? userInfos.firstName : "h";
+    const firstName = userInfos ? userInfos.firstName : " ";
 
     return (
       <div className="userContent">

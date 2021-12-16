@@ -4,9 +4,9 @@ import User from "../pages/User";
 class Datas extends Component {
   constructor(props) {
     super(props);
-
+    //If the server does not respond, change the source in this.state to mock to display the data
     this.state = {
-      source: "mock",
+      source: "mock", //choose api or mock
       users: {},
       activity: {},
       perf: {},
@@ -36,7 +36,7 @@ class Datas extends Component {
     const { id } = this.props.match.params;
 
     if (this.state.source === "api") {
-      // requête l'API
+      // request API
       this.fetchApi(`http://localhost:4000/user/${id}`, "users");
       this.fetchApi(`http://localhost:4000/user/${id}/activity`, "activity");
       this.fetchApi(`http://localhost:4000/user/${id}/performance`, "perf");
@@ -45,7 +45,7 @@ class Datas extends Component {
         "session"
       );
     } else if (this.state.source === "mock") {
-      // requête le fichier
+      // request the file in the mock folder
       this.fetchApi(`http://localhost:3000/mocked/dataUser.json`, "users");
       this.fetchApi(
         `http://localhost:3000/mocked/dataActivity.json`,
@@ -63,6 +63,7 @@ class Datas extends Component {
   }
 
   render() {
+    //we pass the responses of fetchApi to the children in the User component
     return (
       <>
         <User
