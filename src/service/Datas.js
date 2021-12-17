@@ -6,7 +6,7 @@ class Datas extends Component {
     super(props);
     //If the server does not respond, change the source in this.state to mock to display the data
     this.state = {
-      source: "mock", //choose api or mock
+      source: "api", //choose api or mock
       users: {},
       activity: {},
       perf: {},

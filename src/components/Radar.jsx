@@ -10,10 +10,21 @@ import PropTypes from "prop-types";
 
 class RadarGraph extends Component {
   render() {
+    /**
+     * @param {object} data
+     *  @param {object} kind
+     */
+
     const data = this.props.dataPerf.data;
     const kind = this.props.dataPerf.kind;
+    console.log(kind);
 
+    /**
+     * @returns {array} userData array containing the values ​​subject, A, fullMark
+     */
     let userData = [];
+
+    // the loop below allows you to iterate over an object
 
     for (const prop in data) {
       userData.splice(0, 0, {

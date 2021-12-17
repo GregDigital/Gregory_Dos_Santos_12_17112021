@@ -6,11 +6,18 @@ import Radar from "../components/Radar";
 import Activity from "../components/Activity";
 import AverageActivity from "../components/AverageActivity";
 
+//Main component used to display graphics
+
 class User extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+  /**
+* @param {object} data general info 
+@returns {string} user firstName
+
+**/
 
   render() {
     const { userInfos } = this.props.data;
